@@ -1,4 +1,4 @@
-import 'package:firestoredatabase/addProduct.dart';
+
 import 'package:flutter/material.dart';
 
 import 'homepage.dart';
@@ -15,7 +15,7 @@ class CrudFirestore extends StatelessWidget {
       initialRoute: HomePage.routeName,
       routes: {
         HomePage.routeName:(ctx) =>HomePage(),
-        AddUser.routeName:(ctx) =>AddUser(),
+     //   AddUser.routeName:(ctx) =>AddUser(),
       },
     );
   }
