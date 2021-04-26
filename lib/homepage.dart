@@ -22,12 +22,16 @@ class _HomePageState extends State<HomePage> {
   getData(fieldname,fieldvalue);
 }
  int i=0;
-  getData(fieldname,fieldvalue){
+  getData(fieldname,String fieldvalue){
     _users.clear();
-
-   Firestore.instance.collection("test").where(fieldname, isEqualTo: fieldvalue).getDocuments().then((value){
-
+//
+/*
+*
+* */
+    //collectionRef.where('name', '>=', queryText).where('name', '<=', queryText+ '\uf8ff').
+   Firestore.instance.collection("test").where(fieldname, isGreaterThanOrEqualTo: fieldvalue).getDocuments().then((value){
    if(value.documents.length>0) {
+
      value.documents.forEach((element) {
        User u=User();
        //element.data["First Name"].toString(), element.data["Gender"].toString(), element.data["Company Name"].toString(), element.data["Job Title"].toString()
@@ -65,7 +69,7 @@ u.position=element.data["Job Title"].toString();
      }
 
      else if(i==5){
-       fieldname = "Job Title";
+       fieldname = "Job title";
        getData(fieldname, fieldvalue);
      }
      // else{
